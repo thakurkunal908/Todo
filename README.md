@@ -25,10 +25,10 @@
 - Service
   - TodoService
 - Create TODO
-- TODO
+  - TODO
 - Fetch all TODOS
   - TODO
 - Edit TODO
-  - Todo
+  - TODO
 - Delete TODO
   - TODO
