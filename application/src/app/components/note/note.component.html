@@ -1,0 +1,11 @@
+<mat-card cardAppearance (click)="cardClickHandler()">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>{{ note }}</mat-card-content>
+  <mat-card-actions [align]="'end'">
+    <button mat-icon-button (click)="optionClickHandler()">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
