@@ -12,26 +12,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { NoteInputBoxComponent } from './components/note-input-box/note-input-box.component';
 import { AutoGrowInputDirective } from './directives/auto-grow-input.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NoteComponent,
-    CardAppearanceDirective,
-    NoteInputBoxComponent,
-    AutoGrowInputDirective,
-  ],
+    declarations: [
+        AppComponent,
+        NoteComponent,
+        CardAppearanceDirective,
+        NoteInputBoxComponent,
+        AutoGrowInputDirective,
+    ],
 
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
