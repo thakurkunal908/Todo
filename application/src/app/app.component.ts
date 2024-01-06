@@ -6,4 +6,13 @@ import { Note } from './interfaces/note-interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  notes: Note = {
+    title: 'My First Note',
+    note: 'Lorem Ipusm dollar',
+  };
+
+  onSubmitNote(note: Note) {
+    console.log(note);
+  }
+}
