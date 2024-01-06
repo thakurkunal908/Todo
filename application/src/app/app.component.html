@@ -21,3 +21,9 @@
 <div style="max-width: 50%; margin-left: 20px">
   <app-note-input-box></app-note-input-box>
 </div>
+<div class="notes-list">
+    <app-note
+    *ngFor="let note of notes"
+    [title]="note.title"
+    ></app-note>
+</div>
