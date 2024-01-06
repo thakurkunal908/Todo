@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, NoteComponent, CardAppearanceDirective],
+  declarations: [AppComponent, NoteComponent, CardAppearanceDirective,],
   imports: [
     BrowserModule,
     AppRoutingModule,
