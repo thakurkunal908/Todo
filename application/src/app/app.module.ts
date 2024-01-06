@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoteInputBoxComponent,
     AutoGrowInputDirective,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
