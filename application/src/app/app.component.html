@@ -1,4 +1,29 @@
-<h1>Keep</h1>
+<div>
+  <mat-toolbar color="primary" class="header-container">
+    <mat-icon>menu</mat-icon>
+    <mat-icon class="header-icon">note</mat-icon>
+    <span>Keep</span>
+    <span class="header-spacer"></span>
+    <mat-icon
+      class="header-icon"
+      aria-hidden="false"
+      aria-label="header refresh icon"
+      >refresh</mat-icon
+    >
+    <mat-icon
+      class="header-icon"
+      aria-hidden="false"
+      aria-label="header settings icon"
+      >settings</mat-icon
+    >
+  </mat-toolbar>
+</div>
 <div style="max-width: 50%; margin-left: 20px">
   <app-note-input-box></app-note-input-box>
+</div>
+<div class="notes-list">
+    <app-note
+    *ngFor="let note of notes"
+    [title]="note.title"
+    ></app-note>
 </div>
