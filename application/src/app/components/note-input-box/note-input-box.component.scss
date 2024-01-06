@@ -1,0 +1,22 @@
+*:focus{
+    outline: none;
+}
+
+input , textarea{
+    width: 80%;
+    border: none;
+    padding: 10px 20px;
+}
+
+input{
+    font-size: large;
+}
+
+input::placeholder{
+    font-size: large;
+}
+
+textarea{
+    resize: none;
+    overflow-y: hidden;
+}

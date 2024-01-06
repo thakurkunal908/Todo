@@ -1,0 +1,18 @@
+<mat-card>
+  <form [formGroup]="noteData" (ngSubmit)="onSubmit()">
+    <mat-card-header>
+      <input type="text" placeholder="Title" formControlName="title" />
+    </mat-card-header>
+    <mat-card-content>
+      <textarea
+        appAutoGrowInput
+        type="text"
+        placeholder="Take a note..."
+        formControlName="note"
+      ></textarea>
+    </mat-card-content>
+    <mat-card-actions [align]="'end'">
+      <button mat-flat-button type="submit">close</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

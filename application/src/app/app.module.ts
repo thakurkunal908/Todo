@@ -9,9 +9,19 @@ import { MatCardModule } from '@angular/material/card';
 import { CardAppearanceDirective } from './directives/card-appearance.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NoteInputBoxComponent } from './components/note-input-box/note-input-box.component';
+import { AutoGrowInputDirective } from './directives/auto-grow-input.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NoteComponent, CardAppearanceDirective,],
+  declarations: [
+    AppComponent,
+    NoteComponent,
+    CardAppearanceDirective,
+    NoteInputBoxComponent,
+    AutoGrowInputDirective,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
