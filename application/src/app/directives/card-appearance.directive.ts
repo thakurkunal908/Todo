@@ -5,7 +5,9 @@ import { MatCard } from '@angular/material/card';
   selector: '[cardAppearance]',
 })
 export class CardAppearanceDirective {
-  constructor(private card: MatCard) {}
+  constructor(private card: MatCard) {
+    this.card.appearance = 'outlined';
+  }
 
   @HostListener('mouseover') onMouseOver() {
     this.card.appearance = 'raised';

@@ -7,8 +7,8 @@ import { Note } from '../../interfaces/note-interface';
   styleUrls: ['./note.component.scss'],
 })
 export class NoteComponent {
-  @Input() title = 'My Note';
-  @Input() note = 'Some Dummy Text to fill the note.';
+  @Input() title = '';
+  @Input() note = '';
   @Output() cardClick = new EventEmitter<Note>();
   @Output() cardOptionClick = new EventEmitter();
 

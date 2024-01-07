@@ -12,7 +12,9 @@
       ></textarea>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
-      <button mat-flat-button type="submit">close</button>
+      <button mat-flat-button type="submit" (click)="onCloseNodeInput()">
+        close
+      </button>
     </mat-card-actions>
   </form>
 </mat-card>

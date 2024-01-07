@@ -25,3 +25,17 @@
 .header-spacer {
     flex: 1 1 auto;
 }
+
+.add-note-container{
+    display: flex;
+    justify-content: center;
+}
+
+.add-note-container>*{
+    min-width: 40%;
+}
+
+.notes-list-container{
+    max-width: 95%;
+    margin: auto;
+}

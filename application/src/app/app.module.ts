@@ -13,27 +13,35 @@ import { NoteInputBoxComponent } from './components/note-input-box/note-input-bo
 import { AutoGrowInputDirective } from './directives/auto-grow-input.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NoteListComponent } from './components/note-list/note-list.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { LimitViewContentPipe } from './pipes/limit-view-content.pipe';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NoteComponent,
-        CardAppearanceDirective,
-        NoteInputBoxComponent,
-        AutoGrowInputDirective,
-    ],
+  declarations: [
+    AppComponent,
+    NoteComponent,
+    CardAppearanceDirective,
+    NoteInputBoxComponent,
+    AutoGrowInputDirective,
+    NoteListComponent,
+    LimitViewContentPipe,
+    AddNoteComponent,
+  ],
 
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatButtonModule,
-        MatIconModule,
-        ReactiveFormsModule,
-        MatToolbarModule,
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatGridListModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
