@@ -19,31 +19,17 @@
   </mat-toolbar>
 </div>
 <div class="add-note-container">
-  <app-add-note *ngIf="!isAddNote" (addNote)="onAddNote()"></app-add-note>
-  <app-note-input-box
-    *ngIf="isAddNote"
-    (closeNote)="onCloseNote()"
-    (submitNote)="onSubmitNote($event)"
-  ></app-note-input-box>
+  <app-note-input-box (submitNote)="onSubmitNote($event)"></app-note-input-box>
 </div>
 <div class="notes-list-container">
   <div class="note-list">
     <app-note
       class="note-list-item"
       *ngFor="let note of noteList"
+      [noteId]="note.noteId"
       [title]="note.title"
       [note]="note.note"
-      (cardClick)="onSelectNote($event)"
+      (cardClick)="openEditNodeDialog($event)"
     ></app-note>
   </div>
 </div>
-<!-- Modal box -->
-<ng-container *ngIf="showDialog" #dialogContainer>
-  <div class="modal-overlay">
-    <app-note-input-box
-      class="modal-content"
-      [inputNote]="selectedNote"
-      (closeNote)="onCloseModal()"
-    ></app-note-input-box>
-  </div>
-</ng-container>

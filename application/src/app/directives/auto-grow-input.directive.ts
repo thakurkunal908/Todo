@@ -11,13 +11,12 @@ import {
   selector: '[appAutoGrowInput]',
 })
 export class AutoGrowInputDirective implements OnInit {
-  @Input('appAutoGrowInput') inputHeight: string = '10px';
   @HostBinding('style.height') height!: string;
 
   constructor(private input: ElementRef) {}
 
   ngOnInit() {
-    this.height = this.inputHeight;
+    this.height = `${this.input.nativeElement.scrollHeight}px`;
   }
 
   @HostListener('input') resizeTextArea() {

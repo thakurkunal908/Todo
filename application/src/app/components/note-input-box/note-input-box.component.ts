@@ -1,13 +1,13 @@
 import {
   Component,
   EventEmitter,
+  Inject,
   Input,
-  OnChanges,
   OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Note } from 'src/app/interfaces/note-interface';
 
 @Component({
@@ -15,17 +15,21 @@ import { Note } from 'src/app/interfaces/note-interface';
   templateUrl: './note-input-box.component.html',
   styleUrls: ['./note-input-box.component.scss'],
 })
-export class NoteInputBoxComponent implements OnChanges, OnInit {
-  @Input() inputNote: Note = { title: '', note: '' };
+export class NoteInputBoxComponent implements OnInit {
+  @Input() inputNote: Note = this.data?.inputNote || {
+    title: '',
+    note: '',
+    noteId: '',
+  };
   @Output() submitNote = new EventEmitter<Note>();
+  @Output() editNote = new EventEmitter<Note>();
+  @Output() deleteNote = new EventEmitter<string>();
   @Output() closeNote = new EventEmitter();
 
   noteData!: FormGroup;
-  isEditAllowed: boolean = false;
+  isEditView = !!this.inputNote.noteId;
 
-  ngOnChanges(): void {
-    this.isEditAllowed = true;
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {
     this.noteData = new FormGroup({
@@ -38,10 +42,25 @@ export class NoteInputBoxComponent implements OnChanges, OnInit {
     this.closeNote.emit();
   }
 
+  onEditNote() {
+    if (this.noteData.dirty) {
+      this.editNote.emit({
+        noteId: this.inputNote.noteId,
+        ...this.noteData.value,
+      });
+    }
+    this.closeNote.emit();
+  }
+
+  onDeleteNote() {
+    this.deleteNote.emit(this.inputNote.noteId);
+  }
+
   onSubmit() {
     this.onCloseNodeInput();
     if (this.noteData.value.title) {
       this.submitNote.emit(this.noteData.value);
+      this.noteData.setValue({ title: '', note: '' });
     }
   }
 }
