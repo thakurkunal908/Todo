@@ -19,9 +19,7 @@
   </mat-toolbar>
 </div>
 <div class="add-note-container">
-  <app-add-note *ngIf="!isAddNote" (addNote)="onAddNote()"></app-add-note>
   <app-note-input-box
-    *ngIf="isAddNote"
     (closeNote)="onCloseNote()"
     (submitNote)="onSubmitNote($event)"
   ></app-note-input-box>
@@ -30,9 +28,10 @@
   <div class="note-list">
     <app-note
       class="note-list-item"
-      *ngFor="let note of noteList"
-      [title]="note.title"
-      [note]="note.note"
+      *ngFor="let note of noteList | keyvalue"
+      [noteId]="note.key"
+      [title]="'note.title'"
+      [note]="'note.note'"
     ></app-note>
   </div>
 </div>
