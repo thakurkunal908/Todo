@@ -12,8 +12,23 @@
       ></textarea>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
-      <button mat-flat-button type="button" *ngIf="isEditAllowed">Edit</button>
-      <button mat-flat-button type="submit">Close</button>
+      <button
+        mat-flat-button
+        *ngIf="isEditView"
+        (click)="onEditNote()"
+        type="button"
+      >
+        Save
+      </button>
+      <button
+        mat-flat-button
+        *ngIf="isEditView"
+        (click)="onDeleteNote()"
+        type="button"
+      >
+        Delete
+      </button>
+      <button mat-flat-button *ngIf="!isEditView" type="submit">Close</button>
     </mat-card-actions>
   </form>
 </mat-card>

@@ -8,45 +8,45 @@
 // --magenta: #fe00fe;
 
 .header-container {
-    background-color: #5928e5;
-    margin-bottom: 20px;
+  background-color: #5928e5;
+  margin-bottom: 20px;
 }
 
 .header-icon {
-    color: #efefef;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+  color: #efefef;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
 }
 
 .header-icon {
-    padding: 0 14px;
+  padding: 0 14px;
 }
 
 .header-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.add-note-container{
-    display: flex;
-    justify-content: center;
+.add-note-container {
+  display: flex;
+  justify-content: center;
 }
 
-.add-note-container>*{
-    min-width: 40%;
+.add-note-container > * {
+  min-width: 40%;
 }
 
-.notes-list-container{
-    max-width: 95%;
-    margin: auto;
+.notes-list-container {
+  max-width: 95%;
+  margin: auto;
 }
 
-.note-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 20px;
+.note-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 20px;
 }
 
-.note-list-item{
-    min-width: 20%;
+.note-list-item {
+  min-width: 20%;
 }

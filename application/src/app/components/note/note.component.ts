@@ -24,34 +24,17 @@ export class NoteComponent {
   @Output() cardClick = new EventEmitter<Note>();
   @Output() cardOptionClick = new EventEmitter();
 
-  constructor(
-    public dialog: MatDialog,
-    private readonly noteService: NotesService
-  ) {}
+  constructor(private readonly noteService: NotesService) {}
 
   protected cardClickHandler() {
-    this.cardClick.emit({ title: this.title, note: this.note });
-    this.openEditNodeDialog();
+    this.cardClick.emit({
+      title: this.title,
+      note: this.note,
+      noteId: this.noteId,
+    });
   }
 
   protected optionClickHandler() {
     this.cardOptionClick.emit();
-  }
-
-  openEditNodeDialog() {
-    let dialogRef = this.dialog.open(NoteInputBoxComponent, {
-      data: {
-        inputNote: { title: this.title, note: this.note },
-      },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => console.log(result));
-  }
-
-  edit() {
-    this.noteService.editNote(this.noteId, {
-      title: 'edit',
-      note: 'title',
-    });
   }
 }

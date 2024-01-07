@@ -19,19 +19,17 @@
   </mat-toolbar>
 </div>
 <div class="add-note-container">
-  <app-note-input-box
-    (closeNote)="onCloseNote()"
-    (submitNote)="onSubmitNote($event)"
-  ></app-note-input-box>
+  <app-note-input-box (submitNote)="onSubmitNote($event)"></app-note-input-box>
 </div>
 <div class="notes-list-container">
   <div class="note-list">
     <app-note
       class="note-list-item"
-      *ngFor="let note of noteList | keyvalue"
-      [noteId]="note.key"
-      [title]="'note.title'"
-      [note]="'note.note'"
+      *ngFor="let note of noteList"
+      [noteId]="note.noteId"
+      [title]="note.title"
+      [note]="note.note"
+      (cardClick)="openEditNodeDialog($event)"
     ></app-note>
   </div>
 </div>
