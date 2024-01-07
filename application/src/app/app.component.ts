@@ -8,7 +8,7 @@ import { NotesService } from './service/notes.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  notes: Note[] = [];
+  noteList: Note[] = [];
 
   isAddNote: boolean = false;
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   constructor(private readonly notesService: NotesService) {}
 
   fetchNotes() {
-    this.notes = this.notesService.fetchAllNotes();
+    this.noteList = this.notesService.fetchAllNotes()?.reverse();
   }
 
   onSubmitNote(note: Note) {
