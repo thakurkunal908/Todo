@@ -23,6 +23,7 @@
   <app-note-input-box
     *ngIf="isAddNote"
     (closeNote)="onCloseNote()"
+    (submitNote)="onSubmitNote($event)"
   ></app-note-input-box>
 </div>
 <div class="notes-list-container">
