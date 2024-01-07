@@ -27,5 +27,12 @@
   ></app-note-input-box>
 </div>
 <div class="notes-list-container">
-  <app-note-list [noteList]="notes"></app-note-list>
+  <div class="note-list">
+    <app-note
+      class="note-list-item"
+      *ngFor="let note of noteList"
+      [title]="note.title"
+      [note]="note.note"
+    ></app-note>
+  </div>
 </div>
