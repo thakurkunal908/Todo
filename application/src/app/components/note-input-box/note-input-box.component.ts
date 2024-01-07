@@ -26,6 +26,7 @@ export class NoteInputBoxComponent {
   }
 
   onSubmit() {
+    this.onCloseNodeInput();
     if (this.noteData.value.title) {
       this.submitNote.emit(this.noteData.value);
     }
