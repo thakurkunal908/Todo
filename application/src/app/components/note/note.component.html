@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
-  <mat-card-content>{{ note }}</mat-card-content>
+  <mat-card-content>{{ note | limitViewContent : 30 }}</mat-card-content>
   <mat-card-actions [align]="'end'">
     <button mat-icon-button (click)="optionClickHandler()">
       <mat-icon>more_vert</mat-icon>

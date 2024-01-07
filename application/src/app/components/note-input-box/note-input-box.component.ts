@@ -10,6 +10,7 @@ import { Note } from 'src/app/interfaces/note-interface';
 export class NoteInputBoxComponent {
   @Input() inputNote: Note = { title: '', note: '' };
   @Output() submitNote = new EventEmitter<Note>();
+  @Output() closeNote = new EventEmitter();
 
   noteData!: FormGroup;
 
@@ -18,6 +19,10 @@ export class NoteInputBoxComponent {
       title: new FormControl(this.inputNote.title),
       note: new FormControl(this.inputNote.note),
     });
+  }
+
+  onCloseNodeInput() {
+    this.closeNote.emit();
   }
 
   onSubmit() {
