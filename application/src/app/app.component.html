@@ -33,6 +33,17 @@
       *ngFor="let note of noteList"
       [title]="note.title"
       [note]="note.note"
+      (cardClick)="onSelectNote($event)"
     ></app-note>
   </div>
 </div>
+<!-- Modal box -->
+<ng-container *ngIf="showDialog" #dialogContainer>
+  <div class="modal-overlay">
+    <app-note-input-box
+      class="modal-content"
+      [inputNote]="selectedNote"
+      (closeNote)="onCloseModal()"
+    ></app-note-input-box>
+  </div>
+</ng-container>
